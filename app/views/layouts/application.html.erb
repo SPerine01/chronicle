@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<div class="header_inner">
+			<%= link_to image_tag('logo.png'), root_path, id: "logo" %>
+			<nav>
+				<% if user_signed_in? %>
+					<%= link_to "New Note", new_note_path %>
+					<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+				<% else %>
+					<%= link_to "Log In", new_user_session_path %>
+				<% end %>
+
+			</nav>
+		</div>
+	</header>
 
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -15,3 +29,7 @@
 
 </body>
 </html>
+
+
+
+<!-- Writing graphic by <a href="http://www.unocha.org">Ocha</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a> -->
