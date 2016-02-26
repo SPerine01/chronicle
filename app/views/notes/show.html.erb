@@ -1,8 +1,16 @@
-<h1> <%= @note.title %> </h1>
+<div class="wrapper_with_padding">
+	<div id="note_show">
+		<h1 class="title"> 
+			<%= @note.title %> 
+		</h1>
 
-<p> <%= @note.content %> </p>
+		<p> 
+			<%= @note.content %> 
+		</p>
 
-<%= link_to "My Notes", notes_path %>
-
-<%= link_to "Edit Notes", edit_note_path(@note) %>
-<%= link_to "Delete", note_path(@note), method: :delete, data: { confirm: "This action is permanent. Are you sure?" } %>
+		<div class="buttons">
+			<%= link_to "Edit Notes", edit_note_path(@note), class: "button" %>
+			<%= link_to "Delete", note_path(@note), method: :delete, data: { confirm: "This action is permanent. Are you sure?" }, class: "button" %>
+		</div>
+	</div>
+</div>
